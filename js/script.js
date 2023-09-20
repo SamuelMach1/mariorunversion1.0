@@ -1,5 +1,7 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+const botão = document.querySelector('.game-over');
+const restart = document.querySelector('.yes');
 
 const jump = ()=> {
     mario.classList.add('jump');
@@ -15,6 +17,8 @@ const loop = setInterval(()=> {
 
     if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 80){
 
+        botão.style.display = 'block';
+        restart.style.display = 'block';
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
         
@@ -23,6 +27,7 @@ const loop = setInterval(()=> {
         mario.src = './images/game-over.png';
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
+
 
     clearInterval(loop);
     }
